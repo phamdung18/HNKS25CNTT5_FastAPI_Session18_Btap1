@@ -11,12 +11,12 @@ class EnrollmentResponse(BaseModel):
     enrolled_at: datetime
     class Config:
         from_attributes = True
-class CourseResponse(BaseModel):
+class CourseInfo(BaseModel):
     id: int
     name: str
     class Config:
         from_attributes = True
-class StudentCourseResponse(BaseModel):
+class StudentCoursesResponse(BaseModel):
     student_id: int
     full_name: str
-    courses: list[CourseResponse]
+    courses: list[CourseInfo]

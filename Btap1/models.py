@@ -9,7 +9,6 @@ class Student(Base):
     full_name = Column(String(100), nullable=False)
     status = Column(String(20), nullable=False)
     enrollments = relationship("Enrollment", back_populates="student")
-
 class Course(Base):
     __tablename__ = "courses"
     id = Column(Integer, primary_key=True, index=True)
@@ -17,7 +16,6 @@ class Course(Base):
     max_students = Column(Integer, nullable=False)
     status = Column(String(20), nullable=False)
     enrollments = relationship("Enrollment", back_populates="course")
-
 class Enrollment(Base):
     __tablename__ = "enrollments"
     id = Column(Integer, primary_key=True, index=True)
